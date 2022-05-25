@@ -1,5 +1,5 @@
 /* Basic Style */
-body {
+.main {
   background-color: #f8f8f8;
   color: #333;
   font-family: Lato, sans-serif;
@@ -45,22 +45,21 @@ body {
   display: flex;
 }
 
-ul {
+.list {
   margin: 0;
   padding: 0px;
 }
 
-li,
-h3 {
+.list__item {
   list-style: none;
 }
 
-input,
-button {
+.input-checkbox,
+.input-text {
   outline: none;
 }
 
-button {
+.btn {
   background: none;
   border: 0px;
   color: #888;
@@ -68,9 +67,10 @@ button {
   width: 60px;
   font-family: Lato, sans-serif;
   cursor: pointer;
+  outline: none;
 }
 
-button:hover {
+.btn:hover {
   color: #3a3A3a;
 }
 
@@ -83,9 +83,12 @@ button:hover {
   padding: 30px 0 10px;
   margin: 0;
   text-transform: uppercase;
+  list-style: none;
 }
 
-input[type="text"] {
+.input-text {
+  display: none;
+  width: 226px;
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -98,7 +101,7 @@ input[type="text"] {
   color: #888;
 }
 
-input[type="text"]:focus {
+.input-text:focus {
   color: #333;
 }
 
@@ -108,11 +111,12 @@ input[type="text"]:focus {
 }
 
 .add-item__input {
+  display: inline-block;
   width: 318px;
 }
 
 /* Task list */
-li {
+.list__item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -121,7 +125,9 @@ li {
   align-items: center;
 }
 
-li > * {
+.list__input,
+.list__label,
+.list__btn {
   vertical-align: middle;
 }
 
@@ -129,14 +135,10 @@ li > * {
   margin: 0 10px;
 }
 
-li > label {
+.list__label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
-  width: 226px;
-}
-
-li > input[type="text"] {
   width: 226px;
 }
 
@@ -151,21 +153,19 @@ li > input[type="text"] {
 }
 
 /* Completed */
-.completed__list label {
+
+.completed__list .label-text{
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
-ul li input[type=text] {
-  display: none;
-}
 
-.list__item_edit input[type=text] {
+.list__item_edit .input-text {
   display: inline-block;
   width: 224px;
 }
 
-.list__item_edit label {
+.list__item_edit .label-text {
   display: none;
 }
